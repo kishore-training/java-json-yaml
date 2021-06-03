@@ -1,0 +1,81 @@
+openapi: 3.0.3
+info:
+  title: Courses
+  description: The List of Udemy Courses
+  version: 1.0.0
+servers:
+  - url: 'https://udemy.com'
+paths:
+  /course/{course}:
+    get:
+      parameters:
+        - in: path
+          name: course
+          required: true
+          schema:
+            type: string
+          description: The name of the course
+      responses:
+          200:
+            description: List of courses
+            content:
+                application/json:
+                  schema:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/Course'
+          400:
+            description: Invalid course name
+  /course:
+    get:
+      responses:
+        200:
+          description: List of courses
+
+          content:
+              application/json:
+                schema:
+                  type: array
+                  items:
+                    $ref: '#/components/schemas/Course'
+        400:
+          description: Invalid course name
+
+
+
+components:
+  schemas:
+    Student:
+      type: object
+      properties:
+        name:
+          type: string
+          description: name of the student
+        age:
+          type: integer
+          description: age of the student
+        member:
+          type: boolean
+          description: has the student taken membership
+        languages:
+          type: array
+          items:
+            type: string
+          description: array of languages
+    Course:
+      type: object
+      properties:
+        name:
+          type: string
+          description: The name of the course
+        description:
+          type: string
+          description: The course description
+        Instructor:
+          type: string
+          description: The name of the instructor
+        Students:
+          type: array
+          items:
+            $ref: '#/components/schemas/Student'
+

@@ -1,0 +1,15 @@
+{
+  "courses":
+  [{
+    "name": "JSON-tutorial",
+    "description": "Deepdive into JSON",
+    "instructor": "Allen Lone"
+
+  },
+    {
+      "name": "YAML-tutorial",
+      "description": "Deepdive into YAML",
+      "instructor": "Kishore"
+    }
+  ]
+}

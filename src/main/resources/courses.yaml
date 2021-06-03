@@ -1,0 +1,11 @@
+---
+#yaml containing only courses without students
+courses:
+- name: JSON tutorial
+  instructor: Allen Loin
+  description: "Deepdive into JSON"
+
+- name: YAML tutorial
+  instructor: Kishore Jagannath
+  description: "Deepdive into YAML"
+
